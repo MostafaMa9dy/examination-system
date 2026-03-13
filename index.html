@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome </title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./examination/style.css" />
+  </head>
+  <body>
+
+    <span class="material-icons doodle doodle-1">school</span>
+    <span class="material-icons doodle doodle-2">psychology</span>
+    <span class="material-icons doodle doodle-3">emoji_events</span>
+
+    <div class="container">
+
+        <div class="top-bar">
+        <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;">
+          <span class="material-icons">menu_book</span>
+          <span>Examination</span>
+        </div>
+
+         <button id="themeToggle" class="theme-toggle" title="Toggle Theme">
+          <span class="theme-toggle-track">
+            <span class="theme-toggle-thumb">
+              <span class="material-icons" id="themeIcon">dark_mode</span>
+            </span>
+          </span>
+        </button>
+      </div>
+
+       <div class="quiz-header" style="margin-bottom: 2.5rem;">
+        <h1 class="quiz-title" style="font-size: 4.5rem;">
+          Examination
+          <span class="material-icons" style="color: #3b82f6; filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.4)); font-size: 3.5rem;">rocket_launch</span>
+        </h1>
+      </div>
+
+
+      <div class="auth-quiz-card" style="margin: 0 auto; text-align: center; position: relative;">
+        
+        <h2 style=" color: var(--text-muted); margin-bottom: 1rem; font-size: 1.8rem;">
+          Ready to test your knowledge?
+        </h2>
+        
+        <button id="goToLoginBtn" class="btn-quiz btn-next" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-size: 1.2rem; padding: 1.2rem;">
+          Start Now 
+          <span class="material-icons">login</span>
+        </button>
+
+      </div>
+    </div>
+
+     <script>
+       const themeToggle = document.getElementById("themeToggle");
+      const themeIcon = document.getElementById("themeIcon");
+      
+       if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark");
+        themeIcon.textContent = "light_mode";
+      }
+
+      themeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        const isDark = document.body.classList.contains("dark");
+        
+        themeIcon.textContent = isDark ? "light_mode" : "dark_mode";
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+      });
+
+       document.getElementById("goToLoginBtn").addEventListener("click", function() {
+         window.location.href = "./auth/auth.html"; 
+      });
+    </script>
+  </body>
+</html>

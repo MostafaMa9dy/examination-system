@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result - ProExam</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div style="position: absolute; top: 20px; right: 20px;">
+    <button id="logout" class="btn-quiz btn-prev logout-btn">
+        <span class="material-icons">cancel</span>
+        Logout
+    </button>
+</div>
+
+<span class="material-icons doodle doodle-1" style="opacity: 0.1;">edit</span>
+    <span class="material-icons doodle doodle-2" style="opacity: 0.1;">gesture</span>
+
+    <div class="container">
+        <div class="quiz-header">
+            <h1 class="quiz-title">
+                Result
+                <span class="material-icons">emoji_events</span>
+            </h1>
+        </div>
+
+        <div class="quiz-card">
+            <h2 id="resultTitle" style="font-size: 2rem; color: #1e40af; margin-bottom: 1rem;">Great Job!</h2>
+            <p id="resultMsg" style="margin-bottom: 2rem;">You finished the quiz. Here's how you did:</p>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem;">
+                <div style="background: #f1f5f9; padding: 1.5rem; border-radius: 1rem;">
+                    <span id="scoreCorrect" style="display: block; font-size: 1.5rem; font-weight: 800; color: #16a34a;">0</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; color: #64748b; text-transform: uppercase;">Correct</span>
+                </div>
+                <div style="background: #f1f5f9; padding: 1.5rem; border-radius: 1rem;">
+                    <span id="scoreIncorrect" style="display: block; font-size: 1.5rem; font-weight: 800; color: #dc2626;">0</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; color: #64748b; text-transform: uppercase;">Wrong</span>
+                </div>
+                <div style="background: #f1f5f9; padding: 1.5rem; border-radius: 1rem;">
+                    <span id="scorePercent" style="display: block; font-size: 1.5rem; font-weight: 800; color: #1e40af;">0%</span>
+                    <span style="font-size: 0.7rem; font-weight: 700; color: #64748b; text-transform: uppercase;">Score</span>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem;">
+                <button onclick="window.location.href='exam.html'" class="btn-quiz btn-next">Try Again</button>
+            </div>
+        </div>
+
+      <h3 style="margin: 2rem 0 1rem; color: #1e40af;">Review Answers</h3>
+
+<div class="review-container">
+    <div id="reviewList"></div>
+</div>
+    </div>
+
+    <script src="result.js"></script>
+</body>
+</html>
